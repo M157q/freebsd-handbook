@@ -23,3 +23,9 @@ clean: vagrant-up
 		"find /home/vagrant/doc/zh_TW.UTF-8/books/handbook -not -name 'Makefile' -delete"
 
 run: clean build runserver
+
+close:
+	vagrant halt
+
+destroy:
+	vagrant destroy
