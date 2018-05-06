@@ -94,7 +94,7 @@ make FORMATS=html
 cd vagrant
 
 # 建立翻譯環境
-make vagrant-up
+make init
 
 # 產生翻譯結果
 make build

@@ -1,3 +1,6 @@
+init:
+	vagrant up --provision
+
 vagrant-up:
 	vagrant up
 
