@@ -41,7 +41,7 @@ FreeBSD 文件計劃開始採用 GNU gettext 的方式來執行翻譯，GNU gett
 - [ ] 完成 Part 2 翻譯
   - [ ] 7.2. 設定音效卡
   - [ ] 7.4. 影片播放
-  
+
 
 # 如何參與翻譯?
 * [FreeBSD Handbook - EN](https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/) 為操作手冊原文
@@ -63,6 +63,8 @@ https://www.freebsd.org/doc/en_US.ISO8859-1/books/fdp-primer/po-translations.htm
 
 # 建立翻譯環境
 https://www.freebsd.org/doc/en/books/fdp-primer/po-translations-quick-start.html
+
+##### FreeBSD
 ```
 # 安裝翻譯工具
 pkg install docproj subversion
@@ -72,7 +74,7 @@ svn checkout https://svn.FreeBSD.org/doc/head ~/doc
 cd ~/doc/zh_TW.UTF-8/books/handbook/
 
 # 建立翻譯檔 zh_TW.po
-make po 
+make po
 
 # 翻譯
 poedit zh_TW.po
@@ -82,6 +84,26 @@ make tran
 
 # 將 book.xml 轉為 html
 make FORMATS=html
+```
+
+##### non-FreeBSD
+需求套件：[Vagrant](https://www.vagrantup.com/), [VirtualBox](https://www.virtualbox.org/)
+透過 Vagrant 在 VirtualBox 中建立 FreeBSD 虛擬機以供使用
+```
+# 進入 Vagrant 資料夾
+cd vagrant
+
+# 建立翻譯環境
+make vagrant-up
+
+# 產生翻譯結果
+make build
+
+# 執行 HTTP 伺服器
+make runserver
+
+# 產生翻譯結果和執行 HTTP 伺服器 (make build + make runserver)
+make run
 ```
 
 # PO 檔編輯器
@@ -173,7 +195,7 @@ pkg install poedit
 | Fault | 故障 | RAID, ZFS |
 | Fail | 失效 | RAID, ZFS |
 | Parity | 奇偶校驗 | RAID, ZFS |
-| Checksum | 校驗碼, 資料校驗 | RAID, ZFS | 
+| Checksum | 校驗碼, 資料校驗 | RAID, ZFS |
 | Gateway | 通訊閘 | 網路 |
 # PO 線上協同翻譯平台
 * https://hosted.weblate.org/
