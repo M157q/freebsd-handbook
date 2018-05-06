@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# basic dependency
+pkg install -y rsync
+
 # Dependencies for building handbook
 pkg install -y docproj subversion
 
